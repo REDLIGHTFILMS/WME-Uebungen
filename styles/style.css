@@ -347,4 +347,14 @@ footer {
   margin-bottom: 10px;
   padding: 8px;
   color: grey;
+  font-size: 17px;
+}
+.showhide table th {
+  padding: 5px;
+  border-right: 3px solid grey;
+}
+
+.showhide table th a {
+  text-decoration: underline;
+  color: grey;
 }
