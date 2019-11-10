@@ -329,18 +329,18 @@ footer {
   width: 100%;
 }
 
-.table td,
-.table th {
+.ourTable td,
+.ourTable th {
   text-align: left;
   padding: 8px;
 }
 
-.table th {
+.ourTable th {
   font-weight: 700;
 }
 
-.table tr:nth-child(even) {
-  background-color: #dddddd;
+.ourTable tr:nth-child(even) {
+  background-color: #d8d8d8;
 }
 .showhide {
   margin-top: 10px;
@@ -361,5 +361,5 @@ footer {
 
 .fas {
   color: greenyellow;
-  padding: 2px;
+  padding: 3px;
 }

@@ -112,21 +112,20 @@
           <table>
             <tr>
               <th>Show / Hide</th>
-              <th><a onclick="{showhide(3)}">birth/rate</a></th>
-              <th><a onclick="{showhide(4)}">cellphones</a></th>
-              <th><a onclick="{showhide(5)}">children/woman</a></th>
-              <th><a onclick="{showhide(6)}">electric/usage</a></th>
-              <th><a onclick="{showhide(7)}">internet-usage</a></th>
+              <th><a onclick="">birth/rate</a></th>
+              <th><a onclick="">cellphones</a></th>
+              <th><a onclick="">children/woman</a></th>
+              <th><a onclick="">electric/usage</a></th>
+              <th><a onclick="">internet-usage</a></th>
             </tr>
           </table>
         </div>
-        <div class="table" id="table">
-          <table class="ourTable" id="table-values">
+          <table class="ourTable" id="ourtable">
             <tr>
               <th>ID</th>
               <th>
-                Country <i class="fas fa-angle-down" onclick="sortTable(0)"></i
-                ><i class="fas fa-angle-up"></i>
+                Country <i class="fas fa-angle-down" onclick="sortTable(1)"></i
+                ><i class="fas fa-angle-up" onclick="sortTable(2)"></i>
               </th>
               <th>birth rate / 1000</th>
               <th>cellphones / 100</th>
@@ -134,7 +133,6 @@
               <th>electric usage</th>
               <th>internet usage</th>
             </tr>
-            <tr></tr>
             <tr>
               <td>001</td>
               <td>Brazil</td>
@@ -361,7 +359,6 @@
               <td>71.21181627</td>
             </tr>
           </table>
-        </div>
       </main>
       <footer>
         <table>
