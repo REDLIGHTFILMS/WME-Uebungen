@@ -358,3 +358,8 @@ footer {
   text-decoration: underline;
   color: grey;
 }
+
+.fas {
+  color: greenyellow;
+  padding: 2px;
+}

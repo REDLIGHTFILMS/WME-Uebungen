@@ -1,4 +1,4 @@
 function showhide(value) {
-  console.log(value);
-  $("td:nth-child()").hide();
+  $(`th:nth-child(${value})`).hide();
+  $(`td:nth-child(${value})`).hide();
 }
