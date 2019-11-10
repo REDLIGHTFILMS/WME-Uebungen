@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
       src="https://kit.fontawesome.com/3854dd1607.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <table class="ourTable" id="table-values">
       <tr>
         <th>ID</th>
         <th>
-          Country <i class="fas fa-angle-down"></i
+          Country <i class="fas fa-angle-down" onclick="sortTable(0)"></i
           ><i class="fas fa-angle-up"></i>
         </th>
         <th>birth rate / 1000</th>
