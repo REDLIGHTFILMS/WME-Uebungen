@@ -173,7 +173,7 @@ a:hover {
   width: 100%;
 }
 
-/* Menü */
+
 
 nav {
   height: 90px;
@@ -210,15 +210,11 @@ header a:hover {
   color: black;
 }
 
-header > table {
-  width: 100%;
-}
-/*Menü Anfang Responsive (mittel)groß*/
+
+
 
 @media screen and (min-width: 768px) {
-  label {
-    display: none;
-  }
+  
   .logo {
     display: table-cell;
     vertical-align: middle;
@@ -233,8 +229,7 @@ header > table {
     padding-right: 10px;
     -moz-transition: all 0.5s ease-out;
   }
-  .navi > div {
-    height: 35px;
+  
   }
   .navi:hover {
     background: #e1e1e1;
@@ -244,23 +239,16 @@ header > table {
     text-align: center;
   }
 }
-/*Menü klein und Tabelle*/
+
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .navbar {
     display: none;
     float: none;
   }
-  label {
-    float: right;
-    cursor: pointer;
-    font-size: 20pt;
-    right: 30px;
-    top: 15px;
-    position: absolute;
-  }
+  
 }
-/*Menü Ende*/
+
 
 main {
   padding-bottom: 190px;
@@ -373,11 +361,22 @@ footer {
   border-right: 3px solid grey;
 }
 
-.showhide table th a {
+.showhide table th span {
   text-decoration: underline;
   color: grey;
 }
 
+    
+    .showhide  span {
+        cursor: pointer;
+        color: lightgrey;
+        text-decoration: underline;
+        font-weight: normal;
+    }
+    
+    .showhide span:hover {
+        text-decoration: none;
+    }
 .fas {
   color: greenyellow;
   padding: 3px;

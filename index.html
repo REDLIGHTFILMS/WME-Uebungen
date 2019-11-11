@@ -9,7 +9,40 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles/style.css" />
-    <title>world_data</title>
+    <title>World Data</title>
+	<meta name="description" content="Simple webinterface">
+	<meta name="keywords" content="HTML,CSS,JavaScript">
+	<meta name="author" content="Albert Wellerdt, Tobias Scholz">
+	<meta name="title" content="World Data Overview">
+
+	<script>
+	
+function hide_show_table(col_name)
+{
+ var checkbox_val=document.getElementById(col_name).value;
+ if(checkbox_val=="hide")
+ {
+  var all_col=document.getElementsByClassName(col_name);
+  for(var i=0;i<all_col.length;i++)
+  {
+   all_col[i].style.display="none";
+  }
+  document.getElementById(col_name+"_head").style.display="none";
+  document.getElementById(col_name).value="show";
+ }
+	
+ else
+ {
+  var all_col=document.getElementsByClassName(col_name);
+  for(var i=0;i<all_col.length;i++)
+  {
+   all_col[i].style.display="table-cell";
+  }
+  document.getElementById(col_name+"_head").style.display="table-cell";
+  document.getElementById(col_name).value="hide";
+ }
+}
+</script>
   </head>
   <body>
     <div class="menuleft"></div>
@@ -32,42 +65,42 @@
                     <li>
                       <a href="#">
                         <div class="navi">
-                          A1 - Table
+                         <i class="fa fa-list-ul"></i> A1 - Table
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <div class="navi">
-                          A2 - Parse
+                         <i class="fa fa-list-ul"></i> A2 - Parse
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <div class="navi">
-                          A2 - Save
+                         <i class="fa fa-list-ul"></i> A2 - Save
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <div class="navi">
-                          A2 - Print
+                         <i class="fa fa-list-ul"></i> A2 - Print
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <div class="navi">
-                          A3 - Rest
+                         <i class="fa fa-list-ul"></i> A3 - Rest
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <div class="navi">
-                          A4 - Vis
+                          <i class="fa fa-list-ul"></i>A4 - Vis
                         </div>
                       </a>
                     </li>
@@ -112,11 +145,11 @@
           <table>
             <tr>
               <th>Show / Hide</th>
-              <th><a onclick="">birth/rate</a></th>
-              <th><a onclick="">cellphones</a></th>
-              <th><a onclick="">children/woman</a></th>
-              <th><a onclick="">electric/usage</a></th>
-              <th><a onclick="">internet-usage</a></th>
+              <th><span   id="br_col" onClick="hide_show_table(this.id);">birth/rate</span></th>
+              <th><span   id="cp_col" onClick="hide_show_table(this.id);">cellphones</span></th>
+              <th><span   id="cw_col" onClick="hide_show_table(this.id);">children/woman</span></th>
+              <th><span  id="eu_col" onClick="hide_show_table(this.id);">electric/usage</span></th>
+              <th><span   id="iu_col" onClick="hide_show_table(this.id);">internet-usage</span></th>
             </tr>
           </table>
         </div>
@@ -127,236 +160,236 @@
                 Country <i class="fas fa-angle-down" onclick="sortTable(1)"></i
                 ><i class="fas fa-angle-up" onclick="sortTable(2)"></i>
               </th>
-              <th >birth rate / 1000</th>
-              <th >cellphones / 100</th>
-              <th >children / woman</th>
-              <th >electric usage</th>
-              <th>internet usage</th>
+              <th id="br_col_head">birth rate / 1000</th>
+              <th id="cp_col_head">cellphones / 100</th>
+              <th id="cw_col_head">children / woman</th>
+              <th id="eu_col_head">electric usage</th>
+              <th id="iu_col_head">internet usage</th>
             </tr>
             <tr>
               <td>001</td>
               <td>Brazil</td>
-              <td>16.405</td>
-              <td>90.06</td>
-              <td>1.862</td>
-              <td>2,201.807724</td>
-              <td>39.22</td>
+              <td class="br_col">16.405</td>
+              <td class="cp_col">90.06</td>
+              <td class="cw_col">1.862</td>
+              <td class="eu_col">2,201.807724</td>
+              <td class="iu_col">39.22</td>
             </tr>
             <tr>
               <td>002</td>
               <td>Canada</td>
-              <td>10.625</td>
-              <td>70.70997244</td>
-              <td>1.668</td>
-              <td>15,119.76414</td>
-              <td>15119.76414</td>
+              <td class="br_col">10.625</td>
+              <td class="cp_col">70.70997244</td>
+              <td class="cw_col">1.668</td>
+              <td class="eu_col">15,119.76414</td>
+              <td class="iu_col">15119.76414</td>
             </tr>
             <tr>
               <td>003</td>
               <td>Chile</td>
-              <td>15.04</td>
-              <td>97.01862561</td>
-              <td>1.873</td>
-              <td>3,276.06449</td>
-              <td>38.8</td>
+              <td class="br_col">15.04</td>
+              <td class="cp_col">97.01862561</td>
+              <td class="cw_col">1.873</td>
+              <td class="eu_col">3,276.06449</td>
+              <td class="iu_col">38.8</td>
             </tr>
             <tr>
               <td>004</td>
               <td>China</td>
-              <td>13.536</td>
-              <td>55.97490921</td>
-              <td>1.642</td>
-              <td>2632.724637</td>
-              <td>28.97659939</td>
+              <td class="br_col">13.536</td>
+              <td class="cp_col">55.97490921</td>
+              <td class="cw_col">1.642</td>
+              <td class="eu_col">2632.724637</td>
+              <td class="iu_col">28.97659939</td>
             </tr>
             <tr>
               <td>005</td>
               <td>Colombia</td>
-              <td>20.605</td>
-              <td>92.34584564</td>
-              <td>2.405</td>
-              <td>1,041.994137</td>
-              <td>30</td>
+              <td class="br_col">20.605</td>
+              <td class="cp_col">92.34584564</td>
+              <td class="cw_col">2.405</td>
+              <td class="eu_col">1,041.994137</td>
+              <td class="iu_col">30</td>
             </tr>
             <tr>
               <td>006</td>
               <td>Ecuador</td>
-              <td>20.989</td>
-              <td>92.84925653</td>
-              <td>2.69</td>
-              <td>1,078.038961</td>
-              <td>24.6</td>
+              <td class="br_col">20.989</td>
+              <td class="cp_col">92.84925653</td>
+              <td class="cw_col">2.69</td>
+              <td class="eu_col">1,078.038961</td>
+              <td class="iu_col">24.6</td>
             </tr>
             <tr>
               <td>007</td>
               <td>Egypt</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>24.28</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">24.28</td>
             </tr>
             <tr>
               <td>008</td>
               <td>Finland</td>
-              <td>11.127</td>
-              <td>144.1530224</td>
-              <td>1.86</td>
-              <td>15,241.61194</td>
-              <td>82.53133098</td>
+              <td class="br_col">11.127</td>
+              <td class="cp_col">144.1530224</td>
+              <td class="cw_col">1.86</td>
+              <td class="eu_col">15,241.61194</td>
+              <td class="iu_col">82.53133098</td>
             </tr>
             <tr>
               <td>009</td>
               <td>France</td>
-              <td>12.21</td>
-              <td>95.44434226</td>
-              <td>1.978</td>
-              <td>7,339.946832</td>
-              <td>69.0633593</td>
+              <td class="br_col">12.21</td>
+              <td class="cp_col">95.44434226</td>
+              <td class="cw_col">1.978</td>
+              <td class="eu_col">7,339.946832</td>
+              <td class="iu_col">69.0633593</td>
             </tr>
             <tr>
               <td>010</td>
               <td>Germany</td>
-              <td>8.136</td>
-              <td>127.4188883</td>
-              <td>1.376</td>
-              <td>6,753.05764</td>
-              <td>79.48523153</td>
+              <td class="br_col">8.136</td>
+              <td class="cp_col">127.4188883</td>
+              <td class="cw_col">1.376</td>
+              <td class="eu_col">6,753.05764</td>
+              <td class="iu_col">79.48523153</td>
             </tr>
             <tr>
               <td>011</td>
               <td>Iceland</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>92.13686385</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">92.13686385</td>
             </tr>
             <tr>
               <td>012</td>
               <td>Iraq</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>1.047516616</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">1.047516616</td>
             </tr>
             <tr>
               <td>013</td>
               <td>Japan</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>77.38468963</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">77.38468963</td>
             </tr>
             <tr>
               <td>014</td>
               <td>Kazakhstan</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>17.91457965</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">17.91457965</td>
             </tr>
             <tr>
               <td>015</td>
               <td>Mexico</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>26.34</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">26.34</td>
             </tr>
             <tr>
               <td>016</td>
               <td>New Zealand</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>79.82609287</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">79.82609287</td>
             </tr>
             <tr>
               <td>017</td>
               <td>Nigeria</td>
-              <td>24.83</td>
-              <td>69.43661504</td>
-              <td>2.919</td>
-              <td>1,607.918763</td>
-              <td>20</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">20</td>
             </tr>
             <tr>
               <td>018</td>
               <td>Peru</td>
-              <td>21.342</td>
-              <td>85.86901405</td>
-              <td>2.545</td>
-              <td>1,043.052601</td>
-              <td>31.4</td>
+              <td class="br_col">21.342</td>
+              <td class="cp_col">85.86901405</td>
+              <td class="cw_col">2.545</td>
+              <td class="eu_col">1,043.052601</td>
+              <td class="iu_col">31.4</td>
             </tr>
             <tr>
               <td>019</td>
               <td>Russia</td>
-              <td>10.828</td>
-              <td>161.1162887</td>
-              <td>1.537</td>
-              <td>6,132.978648</td>
-              <td>29.23584146</td>
+              <td class="br_col">10.828</td>
+              <td class="cp_col">161.1162887</td>
+              <td class="cw_col">1.537</td>
+              <td class="eu_col">6,132.978648</td>
+              <td class="iu_col">29.23584146</td>
             </tr>
             <tr>
               <td>020</td>
               <td>Saudi Arabia</td>
-              <td>167.3474553</td>
-              <td>69.43661504</td>
-              <td>2.898</td>
-              <td>7,430.743897</td>
-              <td>38</td>
+              <td class="br_col">167.3474553</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.898</td>
+              <td class="eu_col">7,430.743897</td>
+              <td class="iu_col">38</td>
             </tr>
             <tr>
               <td>021</td>
               <td>South Africa</td>
-              <td>22.113</td>
-              <td>93.33587369</td>
-              <td>2.5</td>
-              <td>4,532.021902</td>
-              <td>10.08745979</td>
+              <td class="br_col">22.113</td>
+              <td class="cp_col">93.33587369</td>
+              <td class="cw_col">2.5</td>
+              <td class="eu_col">4,532.021902</td>
+              <td class="iu_col">10.08745979</td>
             </tr>
             <tr>
               <td>022</td>
               <td>Sweden</td>
-              <td>11.72</td>
-              <td>112.1241184</td>
-              <td>1.937</td>
-              <td>14,143.01101</td>
-              <td>91.12326108</td>
+              <td class="br_col">11.72</td>
+              <td class="cp_col">112.1241184</td>
+              <td class="cw_col">1.937</td>
+              <td class="eu_col">14,143.01101</td>
+              <td class="iu_col">91.12326108</td>
             </tr>
             <tr>
               <td>023</td>
               <td>United Arab Emirates</td>
-              <td>14.027</td>
-              <td>153.7997194</td>
-              <td>1.903</td>
-              <td>9,998.291079</td>
-              <td>64</td>
+              <td class="br_col">14.027</td>
+              <td class="cp_col">153.7997194</td>
+              <td class="cw_col">1.903</td>
+              <td class="eu_col">9,998.291079</td>
+              <td class="iu_col">64</td>
             </tr>
             <tr>
               <td>024</td>
               <td>United Kingdom</td>
-              <td>12.195</td>
-              <td>130.1742603</td>
-              <td>1.89</td>
-              <td>5,685.635995</td>
-              <td>77.79971962</td>
+              <td class="br_col">12.195</td>
+              <td class="cp_col">130.1742603</td>
+              <td class="cw_col">1.89</td>
+              <td class="eu_col">5,685.635995</td>
+              <td class="iu_col">77.79971962</td>
             </tr>
             <tr>
               <td>025</td>
               <td>United States</td>
-              <td>14.191</td>
-              <td>89.14911634</td>
-              <td>2.002</td>
-              <td>1,2913.71143</td>
-              <td>71.21181627</td>
+              <td class="br_col">14.191</td>
+              <td class="cp_col">89.14911634</td>
+              <td class="cw_col">2.002</td>
+              <td class="eu_col">1,2913.71143</td>
+              <td class="iu_col">71.21181627</td>
             </tr>
           </table>
       </main>
@@ -369,7 +402,7 @@
               Engineering.
             </td>
             <td id="footer_right">
-              This solution has been created by: <br />Albert and Tobias Scholz
+              This solution has been created by: <br />Albert Wellerdt and Tobias Scholz
               - Team 36
             </td>
           </tr>
