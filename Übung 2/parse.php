@@ -1,5 +1,5 @@
 <?php
-function parse()
+function parseCSV()
 {
     $file = fopen("world_data.csv", "r");
     print_r(fgetcsv($file));
