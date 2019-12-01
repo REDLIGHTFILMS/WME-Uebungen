@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="table_style.css">
+    <script type="text/javascript">
+        
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="checkbox_div">
+            <p>Show Hide Column</p>
+            <li><input type="checkbox" value="hide" id="name_col" onchange="hide_show_table(this.id);">Name</li>
+            <li><input type="checkbox" value="hide" id="age_col" onchange="hide_show_table(this.id);">Age</li>
+            <li><input type="checkbox" value="hide" id="city_col" onchange="hide_show_table(this.id);">City</li>
+        </div>
+
+        <table id="employee_table" align="center" cellpadding=10>
+            <tr>
+                <th>S.no</th>
+                <th id="name_col_head">Name</th>
+                <th id="age_col_head">Age</th>
+                <th id="city_col_head">City</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td class="name_col">Amit</td>
+                <td class="age_col">26</td>
+                <td class="city_col">Agra</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td class="name_col">Rahul</td>
+                <td class="age_col">22</td>
+                <td class="city_col">Mumbai</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td class="name_col">Manoj</td>
+                <td class="age_col">31</td>
+                <td class="city_col">Delhi</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td class="name_col">Rashmi</td>
+                <td class="age_col">25</td>
+                <td class="city_col">Bhopal</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td class="name_col">Shivam</td>
+                <td class="age_col">23</td>
+                <td class="city_col">Jaipur</td>
+            </tr>
+
+        </table>
+
+    </div>
+</body>
+
+</html>
