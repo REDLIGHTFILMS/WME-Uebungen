@@ -15,9 +15,9 @@ class WorldDataParser {
     // Funktion parseCSV() definieren
     function parsCSV($csvFile) {
         if (($handle = fopen($csvFile, "r")) !== FALSE) {
-			$keys = fgetcsv($handle);
+			$head = fgetcsv($handle);
 			while (!feof($handle)) {
-				$array[] = array_combine($keys, fgetcsv($handle));
+				$array[] = array_combine($head, fgetcsv($handle));
 			}
 			fclose($handle);
 		}
@@ -41,6 +41,21 @@ class WorldDataParser {
 				}	
 			}
 			return $xml->asXML("world_data.xml");
+		}
+//A2.3
+//Funktion printXML() definieren		
+		function printXML($xml, $xsl) {
+			
+			$domdocumentxsl = new DOMDocument();
+			$domdocumentxsl->load($xsl);
+			
+			$domdocumentxml = new DOMDocument();
+			$domdocumentxml->load($xml);
+
+			$xsltprocessor = new XSLTProcessor();
+			$xsltprocessor->importStylesheet($domdocumentxsl);
+			
+			return $xsltprocessor->transformToXML($domdocumentxml);
 		}
 }
   
