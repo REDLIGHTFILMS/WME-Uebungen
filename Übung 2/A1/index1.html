@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/3854dd1607.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>World Data</title>
+	<meta name="description" content="Simple webinterface">
+	<meta name="keywords" content="HTML,CSS,JavaScript">
+	<meta name="author" content="Albert Wellerdt, Tobias Scholz">
+	<meta name="title" content="World Data Overview">
+
+	<script>
+	
+function hide_show_table(col_name)
+{
+ var checkbox_val=document.getElementById(col_name).value;
+ if(checkbox_val=="hide")
+ {
+  var all_col=document.getElementsByClassName(col_name);
+  for(var i=0;i<all_col.length;i++)
+  {
+   all_col[i].style.display="none";
+  }
+  document.getElementById(col_name+"_head").style.display="none";
+  document.getElementById(col_name).value="show";
+ }
+	
+ else
+ {
+  var all_col=document.getElementsByClassName(col_name);
+  for(var i=0;i<all_col.length;i++)
+  {
+   all_col[i].style.display="table-cell";
+  }
+  document.getElementById(col_name+"_head").style.display="table-cell";
+  document.getElementById(col_name).value="hide";
+ }
+}
+</script>
+  </head>
+  <body>
+    <div class="menuleft"></div>
+    <div class="container">
+      <header>
+        <table>
+          <tr>
+            <td class="logo">
+              <a href="../index.html"
+                ><img
+                  src="images/world_data_logo_v2.png"
+                  alt="World_Data_Logo"
+                  id="logo"
+              /></a>
+            </td>
+            <td>
+              <div class="navbar">
+                <nav>
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <div class="navi">
+                         <i class="fa fa-list-ul"></i> A1 - Table
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../parse.php">
+                        <div class="navi">
+                         <i class="fa fa-list-ul"></i> A2 - Parse
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../save.php">
+                        <div class="navi">
+                         <i class="fa fa-list-ul"></i> A2 - Save
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../print.php">
+                        <div class="navi">
+                         <i class="fa fa-list-ul"></i> A2 - Print
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="navi">
+                         <i class="fa fa-list-ul"></i> A3 - Rest
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="navi">
+                          <i class="fa fa-list-ul"></i>A4 - Vis
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </header>
+
+      <main>
+        <h1 id="heading1">World Data Overview...</h1>
+
+        <div class="textbox">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's staxt ever since the
+            1500s, when an unknown printer took a galley of type and scrambled
+            it to make a type specimen book. It has survived not only five
+            centuries, but also the leap into electronic typesetting, remaining
+            essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more
+            recently with desktop publishing software like Aldus PageMaker
+            including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+            <a href="#">Read more...</a>
+          </p>
+        </div>
+
+        <div class="showhide" id="s/h">
+          <table>
+            <tr>
+              <th>Show / Hide</th>
+              <th><span   id="br_col" onClick="hide_show_table(this.id);">birth/rate</span></th>
+              <th><span   id="cp_col" onClick="hide_show_table(this.id);">cellphones</span></th>
+              <th><span   id="cw_col" onClick="hide_show_table(this.id);">children/woman</span></th>
+              <th><span  id="eu_col" onClick="hide_show_table(this.id);">electric/usage</span></th>
+              <th><span   id="iu_col" onClick="hide_show_table(this.id);">internet-usage</span></th>
+            </tr>
+          </table>
+        </div>
+          <table class="ourTable" id="ourtable">
+            <tr class="row1">
+              <th class="id">ID</th>
+              <th>
+                Country <i class="fas fa-angle-down" onclick="sortTable(1)"></i
+                ><i class="fas fa-angle-up" onclick="sortTable(2)"></i>
+              </th>
+              <th id="br_col_head">birth rate / 1000</th>
+              <th id="cp_col_head">cellphones / 100</th>
+              <th id="cw_col_head">children / woman</th>
+              <th id="eu_col_head">electric usage</th>
+              <th id="iu_col_head">internet usage</th>
+            </tr>
+            <tr>
+              <td>001</td>
+              <td>Brazil</td>
+              <td class="br_col">16.405</td>
+              <td class="cp_col">90.06</td>
+              <td class="cw_col">1.862</td>
+              <td class="eu_col">2,201.807724</td>
+              <td class="iu_col">39.22</td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>Canada</td>
+              <td class="br_col">10.625</td>
+              <td class="cp_col">70.70997244</td>
+              <td class="cw_col">1.668</td>
+              <td class="eu_col">15,119.76414</td>
+              <td class="iu_col">15119.76414</td>
+            </tr>
+            <tr>
+              <td>003</td>
+              <td>Chile</td>
+              <td class="br_col">15.04</td>
+              <td class="cp_col">97.01862561</td>
+              <td class="cw_col">1.873</td>
+              <td class="eu_col">3,276.06449</td>
+              <td class="iu_col">38.8</td>
+            </tr>
+            <tr>
+              <td>004</td>
+              <td>China</td>
+              <td class="br_col">13.536</td>
+              <td class="cp_col">55.97490921</td>
+              <td class="cw_col">1.642</td>
+              <td class="eu_col">2632.724637</td>
+              <td class="iu_col">28.97659939</td>
+            </tr>
+            <tr>
+              <td>005</td>
+              <td>Colombia</td>
+              <td class="br_col">20.605</td>
+              <td class="cp_col">92.34584564</td>
+              <td class="cw_col">2.405</td>
+              <td class="eu_col">1,041.994137</td>
+              <td class="iu_col">30</td>
+            </tr>
+            <tr>
+              <td>006</td>
+              <td>Ecuador</td>
+              <td class="br_col">20.989</td>
+              <td class="cp_col">92.84925653</td>
+              <td class="cw_col">2.69</td>
+              <td class="eu_col">1,078.038961</td>
+              <td class="iu_col">24.6</td>
+            </tr>
+            <tr>
+              <td>007</td>
+              <td>Egypt</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">24.28</td>
+            </tr>
+            <tr>
+              <td>008</td>
+              <td>Finland</td>
+              <td class="br_col">11.127</td>
+              <td class="cp_col">144.1530224</td>
+              <td class="cw_col">1.86</td>
+              <td class="eu_col">15,241.61194</td>
+              <td class="iu_col">82.53133098</td>
+            </tr>
+            <tr>
+              <td>009</td>
+              <td>France</td>
+              <td class="br_col">12.21</td>
+              <td class="cp_col">95.44434226</td>
+              <td class="cw_col">1.978</td>
+              <td class="eu_col">7,339.946832</td>
+              <td class="iu_col">69.0633593</td>
+            </tr>
+            <tr>
+              <td>010</td>
+              <td>Germany</td>
+              <td class="br_col">8.136</td>
+              <td class="cp_col">127.4188883</td>
+              <td class="cw_col">1.376</td>
+              <td class="eu_col">6,753.05764</td>
+              <td class="iu_col">79.48523153</td>
+            </tr>
+            <tr>
+              <td>011</td>
+              <td>Iceland</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">92.13686385</td>
+            </tr>
+            <tr>
+              <td>012</td>
+              <td>Iraq</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">1.047516616</td>
+            </tr>
+            <tr>
+              <td>013</td>
+              <td>Japan</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">77.38468963</td>
+            </tr>
+            <tr>
+              <td>014</td>
+              <td>Kazakhstan</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">17.91457965</td>
+            </tr>
+            <tr>
+              <td>015</td>
+              <td>Mexico</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">26.34</td>
+            </tr>
+            <tr>
+              <td>016</td>
+              <td>New Zealand</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">79.82609287</td>
+            </tr>
+            <tr>
+              <td>017</td>
+              <td>Nigeria</td>
+              <td class="br_col">24.83</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.919</td>
+              <td class="eu_col">1,607.918763</td>
+              <td class="iu_col">20</td>
+            </tr>
+            <tr>
+              <td>018</td>
+              <td>Peru</td>
+              <td class="br_col">21.342</td>
+              <td class="cp_col">85.86901405</td>
+              <td class="cw_col">2.545</td>
+              <td class="eu_col">1,043.052601</td>
+              <td class="iu_col">31.4</td>
+            </tr>
+            <tr>
+              <td>019</td>
+              <td>Russia</td>
+              <td class="br_col">10.828</td>
+              <td class="cp_col">161.1162887</td>
+              <td class="cw_col">1.537</td>
+              <td class="eu_col">6,132.978648</td>
+              <td class="iu_col">29.23584146</td>
+            </tr>
+            <tr>
+              <td>020</td>
+              <td>Saudi Arabia</td>
+              <td class="br_col">167.3474553</td>
+              <td class="cp_col">69.43661504</td>
+              <td class="cw_col">2.898</td>
+              <td class="eu_col">7,430.743897</td>
+              <td class="iu_col">38</td>
+            </tr>
+            <tr>
+              <td>021</td>
+              <td>South Africa</td>
+              <td class="br_col">22.113</td>
+              <td class="cp_col">93.33587369</td>
+              <td class="cw_col">2.5</td>
+              <td class="eu_col">4,532.021902</td>
+              <td class="iu_col">10.08745979</td>
+            </tr>
+            <tr>
+              <td>022</td>
+              <td>Sweden</td>
+              <td class="br_col">11.72</td>
+              <td class="cp_col">112.1241184</td>
+              <td class="cw_col">1.937</td>
+              <td class="eu_col">14,143.01101</td>
+              <td class="iu_col">91.12326108</td>
+            </tr>
+            <tr>
+              <td>023</td>
+              <td>United Arab Emirates</td>
+              <td class="br_col">14.027</td>
+              <td class="cp_col">153.7997194</td>
+              <td class="cw_col">1.903</td>
+              <td class="eu_col">9,998.291079</td>
+              <td class="iu_col">64</td>
+            </tr>
+            <tr>
+              <td>024</td>
+              <td>United Kingdom</td>
+              <td class="br_col">12.195</td>
+              <td class="cp_col">130.1742603</td>
+              <td class="cw_col">1.89</td>
+              <td class="eu_col">5,685.635995</td>
+              <td class="iu_col">77.79971962</td>
+            </tr>
+            <tr>
+              <td>025</td>
+              <td>United States</td>
+              <td class="br_col">14.191</td>
+              <td class="cp_col">89.14911634</td>
+              <td class="cw_col">2.002</td>
+              <td class="eu_col">1,2913.71143</td>
+              <td class="iu_col">71.21181627</td>
+            </tr>
+          </table>
+      </main>
+      <footer>
+        <table>
+          <tr>
+            <td>
+              Copyright C2019 world_data <br />First course exercise
+              <b>HTML, CSS and JS</b> of the lecture Web and Multimedia
+              Engineering.
+            </td>
+            <td id="footer_right">
+              This solution has been created by: <br />Albert Wellerdt and Tobias Scholz
+              - Team 36
+            </td>
+          </tr>
+        </table>
+      </footer>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
