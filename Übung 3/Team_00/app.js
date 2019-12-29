@@ -23,10 +23,13 @@ app.use( express.static( path.join(__dirname, "public") ) );
 var json;
 
 Converter().fromFile("./world_data.csv").then(source =>{
-   source = json;
+   json = source;
 })
 
-router.get("/items")
+app.get("/items", function(req, res){
+    res.send(json);
+    console.log(json)
+})
 
 
 /**************************************************************************
