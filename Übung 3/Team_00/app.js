@@ -26,9 +26,12 @@ Converter().fromFile("./world_data.csv").then(source =>{
    json = source;
 })
 
-app.get("/items", function(req, res){
-    res.send(json);
-    console.log(json)
+app.get('/items', function(req, res){
+    res.json(json)
+})
+
+app.get('/items/:id', (req, res) => {
+    res.json(json.filter(json => json.id === req.params.id));
 })
 
 
