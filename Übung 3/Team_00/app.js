@@ -26,13 +26,27 @@ Converter().fromFile("./world_data.csv").then(source =>{
    json = source;
 })
 
-app.get('/items', function(req, res){
+app.get('/items', (req, res) => {
     res.json(json)
 })
 
 app.get('/items/:id', (req, res) => {
     res.json(json.filter(json => json.id === req.params.id));
 })
+
+app.get('/items/:id1/:id2', (req, res) => {
+    
+})
+
+app.get('/properties', (req, res) => {
+    
+})
+
+app.get('/properties/:num', (req, res) => {
+    
+})
+
+
 
 
 /**************************************************************************
