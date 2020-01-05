@@ -31,7 +31,13 @@ app.get('/items', (req, res) => {
 })
 
 app.get('/items/:id', (req, res) => {
-    res.json(json.filter(json => json.id === req.params.id));
+    const found = json.some(json => json.id === req.params.id);
+    if(found){
+        res.json(json.filter(json => json.id === req.params.id));
+    } else{
+        res.status(400).json({msg: `No such id ${req.params.id} in database.`});
+    }
+    
 })
 
 app.get('/items/:id1/:id2', (req, res) => {
