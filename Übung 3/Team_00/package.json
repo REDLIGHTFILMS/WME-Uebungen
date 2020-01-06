@@ -1,5 +1,5 @@
 {
-  "name": "TEAM_00",
+  "name": "TEAM_36",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "start": "node index",
     "dev": "nodemon index"
   },
-  "author": "TEAM_00",
+  "author": "TEAM_36",
   "license": "ISC",
   "dependencies": {
     "csvtojson": "^2.0.10",
